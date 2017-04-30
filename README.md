@@ -3,8 +3,10 @@ A journal used to keep track of what food items are eaten daily. The amount of c
 
 ### Start Development
 Concats js files, watches angular js files for changes and starts nodemon.
+
     gulp dev
 
 ### Start FoodJournal
 Starts the application. From the FoodJournal directory.
+
     node index.js
