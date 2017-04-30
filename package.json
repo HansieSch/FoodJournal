@@ -1,0 +1,32 @@
+{
+  "name": "foodjournal",
+  "version": "1.0.0",
+  "description": "Simple food journal",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "bcrypt-nodejs": "^0.0.3",
+    "debug": "^1.0.4",
+    "express": "^4.13.4",
+    "connect": "^2.8.8",
+    "ejs": "^2.4.2",
+    "bcryptjs": "^2.3.0",
+    "mongoose": "^3.8.15",
+    "morgan": "^1.0.1",
+    "mime": "^1.2.11",
+    "formidable": "^1.0.14",
+    "express-jwt": "^3.4.0",
+    "mongoskin": "^2.1.0",
+    "ws": "^1.0.1",
+    "node-mysql": "^0.4.2",
+    "jsonwebtoken": "^7.1.1",
+    "socket.io": "^1.4.6",
+    "mongodb": "^2.1.21"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hansie Schreuder",
+  "license": "ISC"
+}

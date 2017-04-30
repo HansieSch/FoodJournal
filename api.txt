@@ -1,0 +1,30 @@
+Food Item Routes
+================
+
+    "/fooditem"
+        POST        - Creates a new food item.
+        GET         - Returns all food items in database.
+
+    "/fooditem/:id" :id - _id value of the fooditem in database.
+        GET         - Returns the data in database of the specific food item.
+        PUT         - Update the data of a specific food item.
+        DELETE      - Remove specified food item from database.
+
+    "/find/fooditem"
+        GET         - Needs query string containing type, name and brand values for food item. 
+                    - Returns the item that matches from database.
+
+    "/metadata/fooditem"
+        GET         - Returns a object filled with the various types, names, and brands of food items in database.
+
+Journal Entry Routes
+====================
+
+    "/journalentry"
+        GET         - Returns all journal entries in database.
+        POST        - Creates a new journal entry
+
+    "/journalentry/:id" :id - _id value of the journal entry in database
+        GET         - Returns specific journal entry.
+        PUT         - Update specific journal entry.
+        DELETE      - Remove specific journal entry from database.
