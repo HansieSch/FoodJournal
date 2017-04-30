@@ -1,0 +1,25 @@
+<section class="ui my-page container">
+
+    <!-- Back, Delete, and Edit buttons -->
+    <a href="/allJournalEntries" class="ui floated left icon button"><i class="arrow left icon"></i>&nbsp;&nbsp;Back</a>
+    <a ng-click="removeItem(entryData._id)" class="ui red icon button"><i class="remove icon"></i>&nbsp;&nbsp;Delete</a>
+    <a href="/editJournalEntry/{{entryData._id}}" class="ui icon button"><i class="wrench icon"></i>&nbsp;&nbsp;Edit</a>
+
+    <h1 class="ui header">Journal Entry For {{ entryData.dateString }}</h1>
+
+    <h3 class="ui header">Total Calories Consumed: {{ entryData.total_calories_eaten }}</h3>
+    
+    <div class="ui three cards">
+        <div class="ui raised card" ng-repeat="item in entryData.food_consumed">
+            <div class="content">
+                <h2 class="header">{{item.name}}</h2>
+                <div class="meta">{{item.brand}}</div>
+                <div class="description">
+                    <p>Grams Eaten: {{item.amount_eaten}}
+                        <br>Calories Consumed: {{item.calories_eaten}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

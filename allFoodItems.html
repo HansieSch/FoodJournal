@@ -1,0 +1,26 @@
+<section class="my-page ui container">
+
+    <h1 class="ui header">All Food Items</h1>
+    
+    <div class="ui four stackable stacked cards">
+        <div class="ui raised card" ng-repeat="item in all">
+            <div class="content">
+                <div class="header">{{ item.name }}</div>
+                <div class="meta">
+                    <span class="category">{{ item.brand }}</span>
+                </div>
+                <div class="description">
+                </div>
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <a href="/singleFoodItem/{{item._id}}"
+                           class="ui basic green button">Info</a>
+                        <a href="/editFoodItem/{{item._id}}"
+                           class="ui orange basic button">Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

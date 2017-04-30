@@ -1,0 +1,77 @@
+<section class="my-page ui container"> 
+
+    <!-- Back, Delete, and Edit Buttons -->
+    <a href="/allFoodItems" class="ui floated left icon button"><i class="arrow left icon"></i>&nbsp;&nbsp;Back</a>
+    <a ng-click="removeItem(foodItemData._id)" class="ui red icon button"><i class="remove icon"></i>&nbsp;&nbsp;Delete</a>
+    <a href="/editFoodItem/{{foodItemData._id}}" class="ui icon button"><i class="wrench icon"></i>&nbsp;&nbsp;Edit</a>
+
+    <div ng-if="!status && status != 'unset'" class="ui negative message">
+        <div class="header">
+            Error!
+        </div>
+        <p>Something went wrong. Item not removed.</p>
+    </div>
+
+    <h1 class="ui header">Nutritional Information</h1>
+
+    <div class="ui red segment">
+        <h2 class="ui header">Additional Information</h2>
+        <h3 class="ui header">Name: <small>{{ foodItemData.name }}</small></h3>
+        <h3 class="ui header">Brand: <small>{{ foodItemData.brand }}</small></h3>
+        <h3 class="ui header">Calries Per Gram: <small>{{ foodItemData.calories_per_gram }}</small></h3>
+        <h3 class="ui header">Type: <small>{{ foodItemData.type }}</small></h3>
+
+    </div>
+
+    <div class="ui green segment">
+        <h3 class="ui header">Typical Nutritional Information</h3>
+        <table class="ui celled selectable striped table">
+            <thead>
+                <tr>
+                    <th>Nutrients</th>
+                    <th class="right aligned">Per 100g</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Energy</td>
+                    <td class="right aligned">{{ foodItemData.typical_nutritional_information.energy }} kJ</td>
+                </tr>
+                <tr>
+                    <td>Protein</td>
+                    <td class="right aligned">{{ foodItemData.typical_nutritional_information.protein }} g</td>
+                </tr>
+                <tr>
+                    <td>Carbohydrates</td>
+                    <td class="right aligned">{{ foodItemData.typical_nutritional_information.carbohydrates.total }} g</td>
+                </tr>
+                <tr>
+                    <td><pre>&nbsp;&nbsp;&nbsp;&nbsp;</pre>of which sugar</td>
+                    <td class="right aligned">{{ foodItemData.typical_nutritional_information.carbohydrates.total_sugar }} g</td>
+                </tr>
+
+                <tr>
+                    <td>Total Fat</td>
+                    <td class="right aligned">{{ foodItemData.typical_nutritional_information.fat.total }} g</td>
+                </tr>
+                <tr>
+                    <td><pre><pre>&nbsp;&nbsp;&nbsp;&nbsp;</pre></pre>of which saturated fat</td>
+                    <td class="right aligned">{{ foodItemData.typical_nutritional_information.fat.saturated }} g</td>
+                </tr>
+                <tr>
+                    <td><pre><pre>&nbsp;&nbsp;&nbsp;&nbsp;</pre></pre>of which trans fat</td>
+                    <td class="right aligned">{{ foodItemData.typical_nutritional_information.fat.trans }} g</td>
+                </tr>
+                <tr>
+                    <td><pre><pre>&nbsp;&nbsp;&nbsp;&nbsp;</pre></pre>of which mono-unsaturated fat</td>
+                    <td class="right aligned">{{ foodItemData.typical_nutritional_information.fat.mono_unsaturated }} g</td>
+                </tr>
+                <tr>
+                    <td><pre><pre>&nbsp;&nbsp;&nbsp;&nbsp;</pre></pre>of which poly-unsaturated fat</td>
+                    <td class="right aligned">{{ foodItemData.typical_nutritional_information.fat.poly_unsaturated }} g</td>
+                </tr>
+            </tbody>    
+        </table>
+    </div>
+
+</section>

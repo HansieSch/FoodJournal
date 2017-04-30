@@ -1,0 +1,69 @@
+<section class="ui my-page container">
+
+    <!-- Back Button -->
+    <a href="/allJournalEntries" class="ui floated left icon button"><i class="arrow left icon"></i>&nbsp;&nbsp;Back</a>
+
+    <h1 class="ui header">Edit Journal Entry</h1>
+
+    <form class="ui form" ng-submit="addItem(newFoodItemData)">
+
+        <h3 class="ui dividing header">Add Food Item</h3>
+
+        <div class="four fields">
+            <div class="field">
+                <label>Name: </label>
+                <select class="ui search dropdown" ng-model="newFoodItemData.name">
+                    <option value="">Name</option>
+                    <option ng-repeat="name in categories.names" value="{{name}}">{{ name }}</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Brand: </label>
+                <select class="ui search dropdown" ng-model="newFoodItemData.brand">
+                    <option value="">Brand</option>
+                    <option ng-repeat="brand in categories.brands" value="{{brand}}">{{ brand }}</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Type: </label>
+                <select class="ui search dropdown" ng-model="newFoodItemData.type">
+                    <option value="">Type</option>
+                    <option ng-repeat="type in categories.types" value="{{type}}">{{ type }}</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Total Eaten</label>
+                <div class="ui labeled right input">
+                    <input type="number" placeholder="0" ng-model="newFoodItemData.grams_eaten" min="0" step="0.01">
+                    <label class="ui label">g</label>
+                </div>
+            </div>
+            
+        </div>
+
+        <button class="ui basic green button" type="submit"><i class="add icon"></i>Add Item</button>
+
+    </form>
+
+    <br><br>
+    
+    <div class="ui three cards">
+        <div class="ui raised card" ng-repeat="item in entry.food_consumed">
+            <div class="content">
+                <h2 class="header">{{item.name}}</h2>
+                <div class="meta">{{item.brand}}</div>
+                <div class="description">
+                    <p>Grams Eaten: {{item.amount_eaten}}
+                        <br>Calories Consumed: {{item.calories_eaten}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <form class="ui form" ng-submit="saveEntry(entry._id, entry)">
+        <button type="submit" class="ui fluid green button">Save Entry</button>
+    </form>
+    
+</section>

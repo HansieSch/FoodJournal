@@ -1,0 +1,111 @@
+<section class="my-page ui container">
+
+    <!-- Back Button -->
+    <a href="/allFoodItems" class="ui floated left icon button"><i class="arrow left icon"></i>&nbsp;&nbsp;Back</a>
+
+    <h1 class="ui header">Edit Food Item</h1>
+
+    <form class="ui form" ng-submit="saveItem(edittedFoodItemData)">
+        <h3 class="ui dividing header">Additional Information</h3>
+        <div class="three fields">
+            <div class="field">
+                <label>Name</label>
+                <input type="text" placeholder="Name" ng-model="edittedFoodItemData.name">
+            </div>
+            <div class="field">
+                <label>Brand</label>
+                <input type="text" placeholder="Brand" ng-model="edittedFoodItemData.brand">
+            </div>
+            <div class="field">
+                <label>type <small>lowercase only</small></label>
+                <input type="text" placeholder="type" ng-model="edittedFoodItemData.type">
+            </div>
+        </div>
+        <h3 class="ui dividing header">Typical Nutritional Information</h3>
+        <div class="inline field">
+            <label>Energy</label>
+            <div class="ui labeled right input">
+                <input type="number" placeholder="0" ng-model="edittedFoodItemData.energy" min="0" step="0.01">
+                <label class="ui label">kJ</label>
+            </div>
+        </div>
+        <div class="inline field">
+            <label>Protein</label>
+            <div class="ui labeled right input">
+                <input type="number" placeholder="0" ng-model="edittedFoodItemData.protein" min="0" step="0.01">
+                <label class="ui label">g</label>
+            </div>
+        </div>
+        <div class="two fields">
+            <div class="field">
+                <label>Total Carbohydrates</label>
+                <div class="ui labeled right input">
+                    <input type="number" placeholder="0" ng-model="edittedFoodItemData.total_carbs" min="0" step="0.01">
+                    <label class="ui label">g</label>
+                </div>
+            </div>
+            <div class="field">
+                <label>of which sugar</label>
+                <div class="ui labeled right input">
+                    <input type="number" placeholder="0" ng-model="edittedFoodItemData.total_sugar" min="0" step="0.01">
+                    <label class="ui label">g</label>
+                </div>
+            </div>
+        </div>
+        <div class="five fields">
+            <div class="field">
+                <label>Total Fat</label>
+                <div class="ui labeled right input">
+                    <input type="number" placeholder="0" ng-model="edittedFoodItemData.total_fat" min="0" step="0.01">
+                    <label class="ui label">g</label>
+                </div>
+            </div>
+            <div class="field">
+                <label>of which saturated fat</label>
+                <div class="ui labeled right input">
+                    <input type="number" placeholder="0" ng-model="edittedFoodItemData.saturated" min="0" step="0.01">
+                    <label class="ui label">g</label>
+                </div>
+            </div>
+            <div class="field">
+                <label>of which trans fat</label>
+                <div class="ui labeled right input">
+                    <input type="number" placeholder="0" ng-model="edittedFoodItemData.trans" min="0" step="0.01">
+                    <label class="ui label">g</label>
+                </div>
+            </div>
+            <div class="field">
+                <label>of which mono-unsaturated fat</label>
+                <div class="ui labeled right input">
+                    <input type="number" placeholder="0" ng-model="edittedFoodItemData.mono_unsaturated" min="0" step="0.01">
+                    <label class="ui label">g</label>
+                </div>
+            </div>
+            <div class="field">
+                <label>of which poly-unsaturated fat</label>
+                <div class="ui labeled right input">
+                    <input type="number" placeholder="0" ng-model="edittedFoodItemData.poly_unsaturated" min="0" step="0.01">
+                    <label class="ui label">g</label>
+                </div>
+            </div>
+        </div>
+        <button class="ui green button" type="submit">Save</button>
+
+        <!-- Submit Success Message -->
+        <div ng-if="status && status != 'unset'" class="ui positive message">
+            <div class="header">
+                Success!
+            </div>
+            <p>Changes saved.</p>
+        </div>
+
+        <!-- Submit Failure Message -->
+        <div ng-if="!status && status != 'unset'" class="ui negative message">
+            <div class="header">
+                Error!
+            </div>
+            <p>Something went wrong. Check the data entered and try again.</p>
+        </div>
+    </form>
+
+</section>
